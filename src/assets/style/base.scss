@@ -1,13 +1,5 @@
-/***
-    The new CSS reset - version 1.11.2 (last updated 15.11.2023)
-    GitHub page: https://github.com/elad2412/the-new-css-reset
-***/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-/*
-    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
-    - The "symbol *" part is to solve Firefox SVG sprite bug
-    - The "html" element is excluded, otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
- */
 *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
   all: unset;
   display: revert;
@@ -111,4 +103,22 @@ meter {
 /* Remove details summary webkit styles */
 ::-webkit-details-marker {
   display: none;
+}
+
+/* My Settings */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--white-1);
+  font-family: var(--font-family);
+  color: var(--black-1);
+  scroll-behavior: smooth;
 }
