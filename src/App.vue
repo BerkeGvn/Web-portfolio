@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <h1>hello world</h1>
-  </div>
+  <BaseHeader></BaseHeader>
 </template>
 
-<script setup></script>
+<script setup>
+import BaseHeader from '@/views/BaseHeader.vue'
+</script>
 
 <style lang="sass" scoped></style>
