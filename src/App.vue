@@ -1,9 +1,11 @@
 <template>
-  <BaseHeader></BaseHeader>
+  <HeaderView></HeaderView>
+  <ProfileView></ProfileView>
 </template>
 
 <script setup>
-import BaseHeader from '@/views/BaseHeader.vue'
+import HeaderView from '@/views/HeaderView.vue'
+import ProfileView from '@/views/ProfileView.vue'
 </script>
 
 <style lang="sass" scoped></style>
