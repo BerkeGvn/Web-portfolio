@@ -1,7 +1,7 @@
 <template>
   <section class="profile">
     <div class="profile-photo-container">
-      <img src="../../public/my-photo.jpg" alt="my photo" />
+      <img src="../../my-photo.jpg" alt="my photo" />
     </div>
     <div class="profile-main">
       <p class="profile-main-header">Lorem ipsum dolor sit amet consectetur.</p>

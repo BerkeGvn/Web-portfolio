@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="skills-asset">
-        <img src="../../public/skills-asset.svg" alt="" />
+        <img src="../../skills-asset.svg" alt="" />
       </div>
     </div>
   </section>
