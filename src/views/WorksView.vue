@@ -14,15 +14,22 @@
       <div class="works-details">
         <h3 class="works-details-header">OJALA</h3>
         <p class="works-details-description">
-          E-Commerce furniture shop with a sleek, modern UI using Vue.js, SCSS, and JavaScript. With
+          E-Commerce furniture shop with a sleek, modern UI using Vue.js, SCSS, and Typescript. With
           dynamic interactions, responsive design, and visually stunning aesthetics.
         </p>
+        <div class="works-details-links">
+          <a href=""> <MdiGithub class="works-details-links-icon"></MdiGithub></a>
+          <a href=""> <MdiLinkVariant class="works-details-links-icon"></MdiLinkVariant></a>
+        </div>
       </div>
     </div>
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import MdiGithub from '~icons/mdi/github'
+import MdiLinkVariant from '~icons/mdi/link-variant'
+</script>
 
 <style lang="scss" scoped>
 .works {
@@ -68,9 +75,27 @@
       text-align: center;
     }
     &-description {
+      flex: 1;
       font-size: var(--p1-size);
       color: var(--gray-2);
       margin-left: 2rem;
+    }
+    &-links {
+      align-self: flex-end;
+      & a {
+        font-size: 4rem;
+        transition: all 0.5s;
+        &:hover {
+          color: var(--blue-1);
+        }
+        &:last-child {
+          margin-left: 2rem;
+
+          &:hover {
+            color: var(--yellow-1);
+          }
+        }
+      }
     }
   }
 }
