@@ -2,7 +2,7 @@
   <header class="header">
     <div class="header-text-container">
       <h1 class="header-main">Hey, I am <span class="header-main-span">Berke</span></h1>
-      <h2 class="header-sub-header">Lorem ipsum dolor sit amet consectetur.</h2>
+      <h2 class="header-sub-header">Frontend Developer & UI/UX Designer.</h2>
       <img src="../../background-square.svg" alt="a background blob" />
     </div>
   </header>
