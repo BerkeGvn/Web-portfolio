@@ -108,6 +108,9 @@ meter {
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+  @media only screen and (max-width: 1600px) {
+    font-size: 58%;
+  }
 }
 
 body {

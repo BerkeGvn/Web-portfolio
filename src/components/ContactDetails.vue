@@ -80,5 +80,63 @@ import MdiLocation from '~icons/mdi/location'
       }
     }
   }
+  @media only screen and (max-width: 1300px) {
+    &-details {
+      font-size: var(--p0-size);
+      color: var(--gray-2);
+      text-align: center;
+      width: 50%;
+      margin: 8rem auto;
+
+      &-list {
+        font-size: 6rem;
+        &-links {
+          &-span {
+            display: block;
+            font-size: var(--p2-size);
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 1100px) {
+    &-details {
+      &-list {
+        border: none;
+      }
+    }
+  }
+  @media only screen and (max-width: 950px) {
+    &-details {
+      font-size: var(--p1-size);
+      width: 50%;
+
+      &-list {
+        font-size: 4rem;
+        &-links {
+          &-span {
+            font-size: var(--p3-size);
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    &-details {
+      font-size: var(--p1-size);
+      width: 80%;
+
+      &-list {
+        font-size: 4rem;
+        gap: 3rem;
+        &-links {
+          &-span {
+            display: block;
+            font-size: var(--p4-size);
+          }
+        }
+      }
+    }
+  }
 }
 </style>

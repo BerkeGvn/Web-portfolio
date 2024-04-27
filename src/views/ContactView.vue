@@ -29,5 +29,39 @@ import ContactDetails from '@/components/ContactDetails.vue'
     z-index: -2;
     width: 80rem;
   }
+  @media only screen and (max-width: 1600px) {
+    &-header {
+      font-size: var(--h2-size);
+    }
+  }
+  @media only screen and (max-height: 700px) {
+    margin-top: 4rem;
+  }
+  @media only screen and (max-width: 1100px) {
+    & img {
+      width: 60rem;
+    }
+  }
+  @media only screen and (max-width: 950px) {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    &-header {
+      font-size: var(--h3-size);
+    }
+    & img {
+      position: absolute;
+      right: 0;
+      bottom: -12rem;
+      z-index: -2;
+      width: 50rem;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    &-header {
+      font-size: var(--h4-size);
+    }
+  }
 }
 </style>
