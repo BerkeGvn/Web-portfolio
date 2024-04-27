@@ -117,3 +117,18 @@ body {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+  transition: all 0.3s ease-in-out; /* Add smooth transition on hover */
+}
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: var(--pink-2);
+}
+.swiper-button-next:hover {
+  transform: translateX(0.5rem);
+}
+.swiper-button-prev:hover {
+  transform: translateX(-0.5rem);
+}

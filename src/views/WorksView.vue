@@ -1,23 +1,44 @@
 <template>
   <section class="works">
     <h2 class="works-header">My Works</h2>
-    <ProjectDetails
-      :name="Projects[0].name"
-      :desc="Projects[0].desc"
-      :images="Projects[0].images"
-    ></ProjectDetails>
+
+    <swiper
+      :slidesPerView="1"
+      :spaceBetween="30"
+      :loop="true"
+      :pagination="{
+        clickable: true,
+        color: '#FFBA08'
+      }"
+      :navigation="true"
+      :modules="modules"
+      class="mySwiper"
+    >
+      <swiper-slide v-for="project in Projects" :key="project.name">
+        <ProjectDetails
+          :name="project.name"
+          :desc="project.desc"
+          :images="project.images"
+        ></ProjectDetails>
+      </swiper-slide>
+    </swiper>
   </section>
 </template>
 
 <script setup>
-import ProjectDetails from '@/components/ProjectDetails.vue'
 import Projects from '@/data/projects'
+import ProjectDetails from '@/components/ProjectDetails.vue'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Pagination, Navigation } from 'swiper/modules'
+import 'swiper/scss'
+import 'swiper/scss/navigation'
+import 'swiper/scss/pagination'
+const modules = [Pagination, Navigation]
 </script>
 
 <style lang="scss" scoped>
 .works {
   height: 100vh;
-  padding: 0 10rem;
   &-header {
     font-size: var(--h1-size);
     text-align: center;

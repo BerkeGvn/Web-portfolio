@@ -37,6 +37,8 @@ const props = defineProps({
 .projects {
   display: flex;
   margin-top: 4rem;
+  margin-bottom: 2rem;
+  padding: 0 10rem;
   &-header {
     font-size: var(--h1-size);
     text-align: center;
