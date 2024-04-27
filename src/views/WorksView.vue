@@ -1,37 +1,44 @@
 <template>
   <section class="works">
     <h2 class="works-header">My Works</h2>
-    <Carousel :wrap-around="true">
-      <p>hasdf</p>
-      <Slide v-for="project in Projects" :key="project.name">
+
+    <swiper
+      :slidesPerView="1"
+      :spaceBetween="30"
+      :loop="true"
+      :pagination="{
+        clickable: true,
+        color: '#FFBA08'
+      }"
+      :navigation="true"
+      :modules="modules"
+      class="mySwiper"
+    >
+      <swiper-slide v-for="project in Projects" :key="project.name">
         <ProjectDetails
           :name="project.name"
           :desc="project.desc"
           :images="project.images"
         ></ProjectDetails>
-      </Slide>
-
-      <template #addons>
-        <Navigation class="carousel__arrow" />
-        <Pagination />
-      </template>
-    </Carousel>
+      </swiper-slide>
+    </swiper>
   </section>
 </template>
 
 <script setup>
-import ProjectDetails from '@/components/ProjectDetails.vue'
-import { Carousel, Navigation, Pagination, Slide } from 'vue3-carousel'
-
-import 'vue3-carousel/dist/carousel.css'
-
 import Projects from '@/data/projects'
+import ProjectDetails from '@/components/ProjectDetails.vue'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Pagination, Navigation } from 'swiper/modules'
+import 'swiper/scss'
+import 'swiper/scss/navigation'
+import 'swiper/scss/pagination'
+const modules = [Pagination, Navigation]
 </script>
 
 <style lang="scss" scoped>
 .works {
   height: 100vh;
-
   &-header {
     font-size: var(--h1-size);
     text-align: center;

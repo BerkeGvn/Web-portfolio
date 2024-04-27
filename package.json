@@ -11,8 +11,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "vue": "^3.4.15",
-    "vue3-carousel": "^0.3.3"
+    "swiper": "^11.1.1",
+    "vue": "^3.4.15"
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.1.66",
