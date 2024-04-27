@@ -17,6 +17,7 @@
           </ul>
           <ul class="skills-content-list skills-content-list-2">
             <li class="skills-content-list-item">React</li>
+            <li class="skills-content-list-item">Next</li>
             <li class="skills-content-list-item">UI/UX</li>
             <li class="skills-content-list-item">Figma</li>
             <li class="skills-content-list-item">Adobe Illustrator</li>

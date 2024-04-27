@@ -21,7 +21,7 @@
   display: flex;
   flex-direction: column;
   padding: 4rem;
-
+  overflow: hidden;
   &-text-container {
     padding: 8rem 4rem;
     position: relative;
