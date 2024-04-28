@@ -1,7 +1,6 @@
 <template>
   <section class="works">
     <h2 class="works-header">My Works</h2>
-
     <swiper
       :slidesPerView="1"
       :spaceBetween="30"
@@ -44,6 +43,22 @@ const modules = [Pagination, Navigation]
     text-align: center;
     font-weight: 700;
     color: var(--gray-2);
+  }
+  @media only screen and (max-width: 1600px) {
+    &-header {
+      font-size: var(--h2-size);
+    }
+  }
+  @media only screen and (max-width: 950px) {
+    height: auto;
+    &-header {
+      font-size: var(--h3-size);
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    &-header {
+      font-size: var(--h4-size);
+    }
   }
 }
 </style>

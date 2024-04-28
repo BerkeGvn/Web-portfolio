@@ -17,6 +17,7 @@
           </ul>
           <ul class="skills-content-list skills-content-list-2">
             <li class="skills-content-list-item">React</li>
+            <li class="skills-content-list-item">Next</li>
             <li class="skills-content-list-item">UI/UX</li>
             <li class="skills-content-list-item">Figma</li>
             <li class="skills-content-list-item">Adobe Illustrator</li>
@@ -79,6 +80,80 @@
         padding: 1rem 2rem;
         text-align: center;
         margin: 2rem;
+      }
+    }
+  }
+  @media only screen and (max-width: 1600px) {
+    img {
+      width: 35rem;
+    }
+  }
+  @media only screen and (max-width: 1300px) {
+    img {
+      width: 30rem;
+    }
+  }
+  @media only screen and (max-width: 1100px) {
+    img {
+      width: 25rem;
+    }
+    &-content {
+      align-items: center;
+      text-align: center;
+    }
+  }
+  @media only screen and (max-width: 950px) {
+    padding: 5rem;
+    &-container {
+      flex-direction: column-reverse;
+      justify-content: center;
+      padding: 1rem;
+    }
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      &-header {
+        font-size: var(--h7-size);
+      }
+      &-text {
+        font-size: var(--p3-size);
+        width: 70%;
+      }
+
+      &-list {
+        font-size: var(--p4-size);
+
+        &-item {
+          padding: 1rem 2rem;
+          text-align: center;
+          margin: 2rem;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    padding: 2rem;
+    img {
+      width: 15rem;
+    }
+    &-content {
+      &-header {
+        font-size: var(--h7-size);
+      }
+      &-text {
+        font-size: var(--p3-size);
+        width: 70%;
+      }
+
+      &-list {
+        font-size: var(--p5-size);
+
+        &-item {
+          padding: 1rem 1rem;
+          text-align: center;
+          margin: 1rem;
+        }
       }
     }
   }

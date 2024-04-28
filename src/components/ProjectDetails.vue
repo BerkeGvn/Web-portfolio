@@ -37,14 +37,8 @@ const props = defineProps({
 .projects {
   display: flex;
   margin-top: 4rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   padding: 0 10rem;
-  &-header {
-    font-size: var(--h1-size);
-    text-align: center;
-    font-weight: 700;
-    color: var(--gray-2);
-  }
 
   &-ss {
     width: 90rem;
@@ -93,6 +87,115 @@ const props = defineProps({
 
           &:hover {
             color: var(--yellow-1);
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 1600px) {
+    &-details {
+      &-header {
+        font-size: var(--h3-size);
+      }
+    }
+  }
+  @media only screen and (max-width: 1300px) {
+    &-ss {
+      width: 60rem;
+      &-big {
+        & img {
+          width: 100%;
+          padding: 0 1rem;
+        }
+      }
+      &-small {
+        & img {
+          width: 50%;
+          padding: 1rem;
+        }
+      }
+    }
+    &-details {
+      &-header {
+        font-size: var(--h4-size);
+      }
+      &-description {
+        font-size: var(--p2-size);
+      }
+    }
+  }
+  @media only screen and (max-width: 950px) {
+    flex-direction: column;
+    align-items: center;
+
+    &-ss {
+      width: 50rem;
+      &-big {
+        & img {
+          width: 100%;
+          padding: 0 1rem;
+        }
+      }
+      &-small {
+        & img {
+          width: 50%;
+          padding: 1rem;
+        }
+      }
+    }
+    &-details {
+      width: 90%;
+      margin-top: 2rem;
+
+      &-header {
+        font-size: var(--h5-size);
+      }
+      &-description {
+        font-size: var(--p3-size);
+        margin: 0;
+      }
+      &-links {
+        align-self: center;
+        & a {
+          font-size: 3.5rem;
+          &:last-child {
+            margin-left: 2rem;
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    padding: 0 8rem;
+    margin-bottom: 4rem;
+    &-ss {
+      width: 50rem;
+      padding: 0 2rem;
+      &-big {
+        & img {
+          width: 100%;
+          padding: 0 2rem;
+        }
+      }
+      &-small {
+        display: none;
+      }
+    }
+    &-details {
+      width: 100%;
+      gap: 2rem;
+      &-header {
+        font-size: var(--h6-size);
+      }
+      &-description {
+        font-size: var(--p4-size);
+      }
+      &-links {
+        align-self: center;
+        & a {
+          font-size: 3.5rem;
+          &:last-child {
+            margin-left: 2rem;
           }
         }
       }
