@@ -1,9 +1,10 @@
 <template>
+  <BaseNavbar></BaseNavbar>
   <HeaderView></HeaderView>
-  <ProfileView></ProfileView>
-  <SkillsView></SkillsView>
-  <WorksView></WorksView>
-  <ContactView></ContactView>
+  <ProfileView id="profile"></ProfileView>
+  <SkillsView id="skills"></SkillsView>
+  <WorksView id="works"></WorksView>
+  <ContactView id="contact"></ContactView>
   <BaseFooter></BaseFooter>
 </template>
 
@@ -14,6 +15,7 @@ import SkillsView from '@/views/SkillsView.vue'
 import WorksView from '@/views/WorksView.vue'
 import ContactView from '@/views/ContactView.vue'
 import BaseFooter from './components/BaseFooter.vue'
+import BaseNavbar from './components/BaseNavbar.vue'
 </script>
 
 <style></style>

@@ -53,7 +53,7 @@ import ContactDetails from '@/components/ContactDetails.vue'
     & img {
       position: absolute;
       right: 0;
-      bottom: -12rem;
+      bottom: -5rem;
       z-index: -2;
       width: 50rem;
     }

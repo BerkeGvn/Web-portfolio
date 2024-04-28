@@ -127,6 +127,7 @@ const props = defineProps({
   @media only screen and (max-width: 950px) {
     flex-direction: column;
     align-items: center;
+
     &-ss {
       width: 50rem;
       &-big {
@@ -144,6 +145,8 @@ const props = defineProps({
     }
     &-details {
       width: 90%;
+      margin-top: 2rem;
+
       &-header {
         font-size: var(--h5-size);
       }
@@ -163,6 +166,8 @@ const props = defineProps({
     }
   }
   @media only screen and (max-width: 500px) {
+    padding: 0 8rem;
+    margin-bottom: 4rem;
     &-ss {
       width: 50rem;
       padding: 0 2rem;
@@ -178,6 +183,7 @@ const props = defineProps({
     }
     &-details {
       width: 100%;
+      gap: 2rem;
       &-header {
         font-size: var(--h6-size);
       }
