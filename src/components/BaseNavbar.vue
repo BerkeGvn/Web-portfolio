@@ -2,6 +2,11 @@
   <nav class="nav" ref="nav">
     <div class="nav-large">
       <ul class="nav-first-links">
+        <li class="nav-first-links-link">
+          <a href="#">
+            <img src="../../public/favicon.svg" alt="" />
+          </a>
+        </li>
         <li class="nav-first-links-link"><a href="#profile">About</a></li>
         <li class="nav-first-links-link"><a href="#skills">Skills</a></li>
         <li class="nav-first-links-link"><a href="#works">Works</a></li>
@@ -81,10 +86,16 @@ const toggleMenu = () => {
   padding: 0.5rem 4rem;
   z-index: 99;
   transition: transform 0.3s ease-in-out;
+  & img {
+    height: 3rem;
+    margin: 0 auto; /* Center horizontally */
+    display: block; /* Remove any default inline spacing */
+  }
   &-large {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     & ul {
       display: flex;
       gap: 4rem;

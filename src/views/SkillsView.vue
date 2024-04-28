@@ -2,16 +2,17 @@
   <section class="skills">
     <div class="skills-container">
       <div class="skills-content">
-        <p class="skills-content-header">Lorem ipsum consectetur.</p>
+        <p class="skills-content-header">Frontend Expertise: Powering Digital Innovation</p>
         <p class="skills-content-text">
-          Lorem ipsum dolor sit amet consectetur. Lorem habitasse posuere adipiscing id dignissim
-          nibh sollicitudin.
+          My frontend arsenal revolves around Vue.js as the cornerstone, augmented by TypeScript for
+          building resilient and scalable solutions. I specialize in breathing life into websites by
+          seamlessly integrating modern, animated elements.
         </p>
         <div class="skills-content-list-container">
           <ul class="skills-content-list skills-content-list-1">
             <li class="skills-content-list-item">HTML</li>
             <li class="skills-content-list-item">CSS</li>
-            <li class="skills-content-list-item">JavaScript</li>
+            <li class="skills-content-list-item">JavaScript(TS)</li>
             <li class="skills-content-list-item">Vue</li>
             <li class="skills-content-list-item">Nuxt</li>
           </ul>
@@ -25,13 +26,75 @@
         </div>
       </div>
       <div class="skills-asset">
-        <img src="../../skills-asset.svg" alt="" />
+        <img class="stack-icons stack-icons-figma" src="../../figma.svg" alt="" />
+        <img class="stack-icons stack-icons-vue" src="../../vue.svg" alt="" />
+        <img class="stack-icons stack-icons-ts" src="../../typescript.svg" alt="" />
+        <img class="stack-icons stack-icons-sass" src="../../sass.svg" alt="" />
+        <img class="stack-icons stack-icons-react" src="../../react.svg" alt="" />
+        <img src="../../berke.svg" alt="" />
       </div>
     </div>
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { onMounted } from 'vue'
+gsap.registerPlugin(ScrollTrigger)
+
+onMounted(() => {
+  gsap.fromTo(
+    '.skills-content-list-item',
+    {
+      opacity: 0
+    },
+    {
+      opacity: 1,
+      duration: 0.5,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: '.skills',
+        start: 'top center',
+        toggleActions: 'restart none none reset'
+      }
+    }
+  )
+  gsap.to('.stack-icons-vue', {
+    duration: 3.5,
+    y: -20,
+    repeat: -1,
+    yoyo: true
+  })
+  gsap.to('.stack-icons-ts', {
+    duration: 3.5,
+    y: -10,
+    x: 10,
+    repeat: -1,
+    yoyo: true
+  })
+  gsap.to('.stack-icons-react', {
+    duration: 1.5,
+    x: 15,
+    repeat: -1,
+    yoyo: true
+  })
+  gsap.to('.stack-icons-sass ', {
+    duration: 5.5,
+    y: -20,
+    x: 15,
+    repeat: -1,
+    yoyo: true
+  })
+  gsap.to('.stack-icons-figma ', {
+    duration: 6,
+    y: 20,
+    x: 15,
+    repeat: -1,
+    yoyo: true
+  })
+})
+</script>
 
 <style lang="scss" scoped>
 @import '../assets/style/variables.scss';
@@ -39,6 +102,42 @@
 .skills {
   height: 100vh;
   padding: 10rem;
+  &-asset {
+    position: relative;
+  }
+  & .stack-icons {
+    position: absolute;
+    display: block;
+    width: 5rem;
+    &-figma {
+      bottom: 20%;
+      left: -8rem;
+      transform: rotate(-0.05turn);
+    }
+    &-vue {
+      left: 0;
+      top: -3rem;
+      transform: rotate(-0.05turn);
+    }
+    &-ts {
+      left: 50%;
+      top: -5rem;
+      transform: rotate(0.05turn);
+    }
+    &-sass {
+      right: -5rem;
+      bottom: 24%;
+      transform: rotate(0.15turn);
+    }
+    &-react {
+      right: -2rem;
+      top: 20%;
+      transform: rotate(0.15turn);
+    }
+  }
+  img {
+    width: 50rem;
+  }
   &-container {
     background-color: var(--yellow-1);
     height: 100%;
@@ -59,6 +158,7 @@
     &-text {
       color: var(--white-1);
       font-size: var(--p2-size);
+      text-shadow: 0.2px 0.1px 3px var(--white-2);
       font-weight: 500;
       width: 70%;
     }
@@ -85,7 +185,7 @@
   }
   @media only screen and (max-width: 1600px) {
     img {
-      width: 35rem;
+      width: 45rem;
     }
   }
   @media only screen and (max-width: 1300px) {
@@ -134,8 +234,19 @@
   }
   @media only screen and (max-width: 500px) {
     padding: 2rem;
+    & .stack-icons {
+      position: absolute;
+      display: block;
+      width: 3rem;
+      &-ts {
+        top: -3rem;
+      }
+      &-figma {
+        left: -5rem;
+      }
+    }
     img {
-      width: 15rem;
+      width: 20rem;
     }
     &-content {
       &-header {

@@ -1,19 +1,49 @@
 <template>
   <section class="profile">
     <div class="profile-photo-container">
-      <img src="../../images/my-photo.jpg" alt="my photo" />
+      <img class="animate" src="../../images/my-photo.jpg" alt="my photo" />
     </div>
     <div class="profile-main">
-      <p class="profile-main-header">Lorem ipsum dolor sit amet consectetur.</p>
-      <p class="profile-main-text">
-        Lorem ipsum dolor sit amet consectetur. Sed nibh felis facilisis feugiat. Eget mi sed
-        consequat facilisis lectus enim.
+      <p class="profile-main-header animate">
+        Crafting Digital Experiences and Fostering Creativity
+      </p>
+      <p class="profile-main-text animate">
+        Hey there, I'm Berke, a frontend developer and designer based in Tokyo. Fluent in Turkish,
+        English, and Japanese, I thrive on creating digital experiences that resonate across
+        cultures. While my formal work experience may still be evolving, I've immersed myself in the
+        dynamic world of web development, constantly refining my skills and pushing boundaries over
+        the past three years. From sleek designs to seamless functionality, I'm passionate about
+        crafting websites that not only appeal to the eye but also provide an intuitive user
+        experience. Contact me if you want to collaborate and bring your digital vision to life!
       </p>
     </div>
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { onMounted } from 'vue'
+gsap.registerPlugin(ScrollTrigger)
+
+onMounted(() => {
+  gsap.fromTo(
+    '.animate',
+    {
+      opacity: 0
+    },
+    {
+      opacity: 1,
+      duration: 0.8,
+      stagger: 0.4,
+      scrollTrigger: {
+        trigger: '.profile',
+        start: 'top center'
+      }
+    }
+  )
+})
+</script>
 
 <style lang="scss" scoped>
 @import '../assets/style/variables.scss';
@@ -26,6 +56,7 @@
   &-photo-container {
     width: 50%;
     height: 70%;
+
     & img {
       width: 100%;
       height: 100%;
@@ -34,8 +65,8 @@
   }
   &-main {
     color: var(--white-1);
-    padding: 2rem;
-    margin-top: -10rem;
+    padding: 0 2rem;
+
     width: 70%;
     display: flex;
     flex-direction: column;
@@ -43,22 +74,22 @@
     &-header {
       font-size: var(--h2-size);
       font-weight: bold;
-      width: 80%;
+      width: 100%;
     }
     &-text {
       font-size: var(--p0-size);
-      width: 60%;
+      width: 90%;
     }
   }
   @media only screen and (max-width: 1600px) {
     &-main {
       &-header {
         font-size: var(--h3-size);
-        width: 80%;
+        width: 100%;
       }
       &-text {
         font-size: var(--p0-size);
-        width: 70%;
+        width: 90%;
       }
     }
   }
@@ -111,7 +142,7 @@
     }
     &-main {
       width: 100%;
-      margin-top: 0;
+      margin-top: 2rem;
       &-header {
         font-size: var(--h7-size);
         width: 100%;
