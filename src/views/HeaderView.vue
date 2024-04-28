@@ -3,12 +3,36 @@
     <div class="header-text-container">
       <h1 class="header-main">Hey, I am <span class="header-main-span">Berke</span></h1>
       <h2 class="header-sub-header">Frontend Developer & UI/UX Designer.</h2>
-      <img src="../../background-square.svg" alt="a background blob" />
+      <img class="blob" src="../../background-square.svg" alt="a background blob" />
     </div>
   </header>
 </template>
 
-<script setup></script>
+<script setup>
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { onMounted } from 'vue'
+gsap.registerPlugin(ScrollTrigger)
+
+onMounted(() => {
+  gsap.fromTo(
+    '.blob',
+    {
+      y: 0,
+      x: 0
+    },
+    {
+      y: 400,
+      x: 200,
+      scrollTrigger: {
+        trigger: '.header',
+        scrub: true,
+        start: 'bottom bottom'
+      }
+    }
+  )
+})
+</script>
 
 <style lang="scss" scoped>
 @import '../assets/style/variables.scss';
@@ -22,6 +46,7 @@
   flex-direction: column;
   padding: 4rem;
   overflow: hidden;
+
   &-text-container {
     padding: 8rem 4rem;
     position: relative;
@@ -55,10 +80,8 @@
   }
   @media only screen and (max-width: 1600px) {
     img {
-      z-index: -222;
       left: 50%;
       width: 100rem;
-      max-width: none;
     }
     &-sub-header {
       width: 30%;

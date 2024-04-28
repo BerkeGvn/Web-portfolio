@@ -3,7 +3,7 @@
     <p>Currently looking for a job.</p>
     <p>Feel free to contact me!</p>
     <ul class="contact-details-list">
-      <li>
+      <li class="items">
         <a
           class="contact-details-list-links contact-details-list-links-hub"
           href="https://github.com/BerkeGvn"
@@ -12,7 +12,7 @@
           <MdiGithub></MdiGithub><span class="contact-details-list-links-span">/BerkeGvn</span></a
         >
       </li>
-      <li>
+      <li class="items">
         <a
           class="contact-details-list-links contact-details-list-links-mail"
           href="mailto:berkegvn@gmail.com"
@@ -21,7 +21,7 @@
           ><span class="contact-details-list-links-span">berkegvn@gmail.com</span></a
         >
       </li>
-      <li>
+      <li class="items">
         <a class="contact-details-list-links contact-details-list-links-loc" @click.prevent="">
           <MdiLocation></MdiLocation><span class="contact-details-list-links-span">Tokyo</span></a
         >
@@ -34,6 +34,31 @@
 import MdiEmail from '~icons/mdi/email'
 import MdiGithub from '~icons/mdi/github'
 import MdiLocation from '~icons/mdi/location'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { onMounted } from 'vue'
+gsap.registerPlugin(ScrollTrigger)
+
+onMounted(() => {
+  gsap.fromTo(
+    '.items',
+    {
+      y: 50,
+      opacity: 0
+    },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 0.5,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: '.contact-details',
+        start: 'top center',
+        toggleActions: 'restart none none reset'
+      }
+    }
+  )
+})
 </script>
 
 <style lang="scss" scoped>
