@@ -4,21 +4,29 @@
       <ul class="nav-first-links">
         <li class="nav-first-links-link">
           <a href="#">
-            <img src="../../public/favicon.svg" alt="" />
+            <img src="../../favicon.svg" alt="" />
           </a>
         </li>
-        <li class="nav-first-links-link"><a href="#profile">About</a></li>
-        <li class="nav-first-links-link"><a href="#skills">Skills</a></li>
-        <li class="nav-first-links-link"><a href="#works">Works</a></li>
-        <li class="nav-first-links-link"><a href="#contact">Contact</a></li>
+        <li class="nav-first-links-link">
+          <a href="#profile">{{ $t('nav.about') }}</a>
+        </li>
+        <li class="nav-first-links-link">
+          <a href="#skills">{{ $t('nav.skills') }}</a>
+        </li>
+        <li class="nav-first-links-link">
+          <a href="#works">{{ $t('nav.works') }}</a>
+        </li>
+        <li class="nav-first-links-link">
+          <a href="#contact">{{ $t('nav.contact') }}</a>
+        </li>
       </ul>
       <ul class="nav-second-links">
         <li class="nav-second-links-link">
-          <a href="https://github.com/BerkeGvn">
+          <a href="https://github.com/BerkeGvn" target="_blank">
             <MdiGithub></MdiGithub>
           </a>
         </li>
-        <li class="nav-second-links-link">EN</li>
+        <li class="nav-second-links-link">{{ $t('nav.lang') }}</li>
       </ul>
     </div>
     <div class="nav-small">
@@ -30,10 +38,18 @@
       </div>
       <div class="nav-small-list">
         <ul class="nav-first-links">
-          <li class="nav-first-links-link"><a href="#profile">About</a></li>
-          <li class="nav-first-links-link"><a href="#skills">Skills</a></li>
-          <li class="nav-first-links-link"><a href="#works">Works</a></li>
-          <li class="nav-first-links-link"><a href="#contact">Contact</a></li>
+          <li class="nav-first-links-link">
+            <a href="#profile">{{ $t('nav.about') }}</a>
+          </li>
+          <li class="nav-first-links-link">
+            <a href="#skills">{{ $t('nav.skills') }}</a>
+          </li>
+          <li class="nav-first-links-link">
+            <a href="#works">{{ $t('nav.works') }}</a>
+          </li>
+          <li class="nav-first-links-link">
+            <a href="#contact">{{ $t('nav.contact') }}</a>
+          </li>
         </ul>
         <ul class="nav-second-links">
           <li class="nav-second-links-link">
@@ -41,7 +57,7 @@
               <MdiGithub></MdiGithub>
             </a>
           </li>
-          <li class="nav-second-links-link">EN</li>
+          <li class="nav-second-links-link">{{ $t('nav.lang') }}</li>
         </ul>
       </div>
     </div>

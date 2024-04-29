@@ -1,8 +1,15 @@
 <template>
   <header class="header">
     <div class="header-text-container">
-      <h1 class="header-main">Hey, I am <span class="header-main-span">Berke</span></h1>
-      <h2 class="header-sub-header">Frontend Developer & UI/UX Designer.</h2>
+      <h1 class="header-main">
+        <span class="lang-span">
+          {{ $t('header.main') }}
+          <span class="lang-span-sub"> {{ $t('header.mainSub') }}</span></span
+        >
+
+        <span class="header-main-span">{{ $t('header.span') }}</span>
+      </h1>
+      <h2 class="header-sub-header">{{ $t('header.sub') }}</h2>
       <img class="blob" src="../../background-square.svg" alt="a background blob" />
     </div>
   </header>
@@ -12,9 +19,19 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
 gsap.registerPlugin(ScrollTrigger)
+const { locale } = useI18n()
 
 onMounted(() => {
+  //Change the font size according to language
+  if (locale.value === 'ja') {
+    const header = document.querySelector('.lang-span')
+    const subHeader = document.querySelector('.header-sub-header')
+    header.classList.add('smaller')
+    subHeader.classList.add('wider')
+  }
+
   gsap.fromTo(
     '.blob',
     {
@@ -46,7 +63,18 @@ onMounted(() => {
   flex-direction: column;
   padding: 4rem;
   overflow: hidden;
-
+  // For japanese
+  & .smaller {
+    font-size: var(--h1-size);
+    & .lang-span-sub {
+      margin-left: -4rem;
+      font-size: var(--h3-size);
+    }
+  }
+  & .wider {
+    width: 45%;
+    margin-left: 25%;
+  }
   &-text-container {
     padding: 8rem 4rem;
     position: relative;
@@ -89,6 +117,14 @@ onMounted(() => {
     }
   }
   @media only screen and (max-width: 1300px) {
+    & .smaller {
+      font-size: var(--h3-size);
+      & .lang-span-sub {
+        margin-left: -2rem;
+        font-size: var(--h4-size);
+      }
+    }
+
     &-main {
       font-size: var(--h1-size);
       margin-left: 16%;
@@ -174,6 +210,19 @@ onMounted(() => {
       margin-top: -6rem;
       left: 10%;
       width: 60rem;
+    }
+    & .smaller {
+      font-size: var(--h4-size);
+      & .lang-span-sub {
+        display: block;
+        text-align: center;
+        margin-left: -2rem;
+        font-size: var(--h6-size);
+      }
+    }
+    & .wider {
+      font-size: var(--h8-size);
+      margin-left: 30%;
     }
     &-text-container {
       padding: 1rem 0;

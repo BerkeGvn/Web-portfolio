@@ -18,6 +18,7 @@
           :name="project.name"
           :desc="project.desc"
           :images="project.images"
+          :links="project.links"
         ></ProjectDetails>
       </swiper-slide>
     </swiper>

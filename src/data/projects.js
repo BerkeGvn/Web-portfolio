@@ -6,6 +6,10 @@ const Projects = [{
     './images/ojala.png',
     './images/ojala-s-1.png',
     './images/ojala-s-2.png'
+  ],
+  links: [
+    'https://github.com/BerkeGvn/Ojala',
+    'https://ojala.vercel.app/',
   ]
 },
 {
@@ -17,6 +21,10 @@ const Projects = [{
     './images/suiko.png',
     './images/suiko-s-1.png',
     './images/suiko-s-2.png'
+  ],
+  links: [
+    'https://github.com/BerkeGvn/suiko-task-app',
+    'https://berkegvn.github.io/suiko-task-app/Guide',
   ]
 },
 {
@@ -29,6 +37,10 @@ const Projects = [{
     './images/roka.png',
     './images/roka-s-1.png',
     './images/roka-s-2.png'
+  ],
+  links: [
+    'https://github.com/BerkeGvn/Roka-Wine',
+    'https://berkegvn.github.io/Roka-Wine/',
   ]
 },
 {
@@ -39,6 +51,10 @@ const Projects = [{
     './images/battleship.png',
     './images/battleship-s-1.png',
     './images/battleship-s-2.png'
+  ],
+  links: [
+    'https://github.com/BerkeGvn/battleship_game',
+    'https://berkegvn.github.io/battleship_game/',
   ]
 },
 ]

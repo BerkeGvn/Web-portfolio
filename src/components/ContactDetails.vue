@@ -1,7 +1,7 @@
 <template>
   <div class="contact-details">
-    <p>Currently looking for a job.</p>
-    <p>Feel free to contact me!</p>
+    <p>{{ $t('contact.job') }}</p>
+    <p>{{ $t('contact.contact') }}</p>
     <ul class="contact-details-list">
       <li class="items">
         <a
@@ -23,7 +23,8 @@
       </li>
       <li class="items">
         <a class="contact-details-list-links contact-details-list-links-loc" @click.prevent="">
-          <MdiLocation></MdiLocation><span class="contact-details-list-links-span">Tokyo</span></a
+          <MdiLocation></MdiLocation
+          ><span class="contact-details-list-links-span">{{ $t('contact.city') }}</span></a
         >
       </li>
     </ul>
