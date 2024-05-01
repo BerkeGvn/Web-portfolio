@@ -1,13 +1,15 @@
 <template>
   <div class="projects">
     <div class="projects-ss">
-      <div class="projects-ss-big">
-        <img :src="props.images[0]" alt="A screenshot of my project" />
-      </div>
-      <div class="projects-ss-small">
-        <img :src="props.images[1]" alt="A screenshot of my project" />
-        <img :src="props.images[2]" alt="A screenshot of my project" />
-      </div>
+      <a :href="props.links[1]" target="_blink">
+        <div class="projects-ss-big">
+          <img :src="props.images[0]" alt="A screenshot of my project" />
+        </div>
+        <div class="projects-ss-small">
+          <img :src="props.images[1]" alt="A screenshot of my project" />
+          <img :src="props.images[2]" alt="A screenshot of my project" />
+        </div>
+      </a>
     </div>
     <div class="projects-details">
       <h3 class="projects-details-header">{{ props.name }}</h3>
@@ -15,8 +17,12 @@
         {{ props.desc }}
       </p>
       <div class="projects-details-links">
-        <a href=""> <MdiGithub class="projects-details-links-icon"></MdiGithub></a>
-        <a href=""> <MdiLinkVariant class="projects-details-links-icon"></MdiLinkVariant></a>
+        <a :href="props.links[0]" target="_blink">
+          <MdiGithub class="projects-details-links-icon"></MdiGithub
+        ></a>
+        <a :href="props.links[1]" target="_blink">
+          <MdiLinkVariant class="projects-details-links-icon"></MdiLinkVariant
+        ></a>
       </div>
     </div>
   </div>
@@ -29,7 +35,8 @@ import MdiLinkVariant from '~icons/mdi/link-variant'
 const props = defineProps({
   name: String,
   desc: String,
-  images: Array
+  images: Array,
+  links: Array
 })
 </script>
 

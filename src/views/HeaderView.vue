@@ -1,8 +1,18 @@
 <template>
   <header class="header">
     <div class="header-text-container">
-      <h1 class="header-main">Hey, I am <span class="header-main-span">Berke</span></h1>
-      <h2 class="header-sub-header">Frontend Developer & UI/UX Designer.</h2>
+      <h1 class="header-main">
+        <span class="lang-span">
+          {{ $t('header.main') }}
+          <span class="lang-span-sub"> {{ $t('header.mainSub') }}</span></span
+        >
+
+        <span class="header-main-span"
+          >{{ $t('header.span') }}
+          <span v-if="locale === 'ja'" class="header-main-span-polite">です。</span>
+        </span>
+      </h1>
+      <h2 class="header-sub-header">{{ $t('header.sub') }}</h2>
       <img class="blob" src="../../background-square.svg" alt="a background blob" />
     </div>
   </header>
@@ -11,8 +21,24 @@
 <script setup>
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { onMounted } from 'vue'
+import { onMounted, watchEffect } from 'vue'
+import { useI18n } from 'vue-i18n'
 gsap.registerPlugin(ScrollTrigger)
+const { locale } = useI18n()
+
+watchEffect(() => {
+  //Change the font size, styler according to languageS
+  const header = document.querySelector('.lang-span')
+  const subHeader = document.querySelector('.header-sub-header')
+  if (locale.value === 'ja' && header && subHeader) {
+    header.classList.add('smaller')
+    subHeader.classList.add('wider')
+  }
+  if (header && subHeader && locale.value === 'en') {
+    header.classList.remove('smaller')
+    subHeader.classList.remove('wider')
+  }
+})
 
 onMounted(() => {
   gsap.fromTo(
@@ -46,7 +72,18 @@ onMounted(() => {
   flex-direction: column;
   padding: 4rem;
   overflow: hidden;
-
+  // For japanese
+  & .smaller {
+    font-size: var(--h1-size);
+    & .lang-span-sub {
+      margin-left: -4rem;
+      font-size: var(--h3-size);
+    }
+  }
+  & .wider {
+    width: 45%;
+    margin-left: 25%;
+  }
   &-text-container {
     padding: 8rem 4rem;
     position: relative;
@@ -60,6 +97,11 @@ onMounted(() => {
       color: var(--blue-1);
       display: block;
       margin-left: 18%;
+      // for japanese desu suffix
+      &-polite {
+        color: var(--gray-2);
+        font-size: var(--h7-size);
+      }
     }
   }
   &-sub-header {
@@ -89,6 +131,14 @@ onMounted(() => {
     }
   }
   @media only screen and (max-width: 1300px) {
+    & .smaller {
+      font-size: var(--h3-size);
+      & .lang-span-sub {
+        margin-left: -2rem;
+        font-size: var(--h4-size);
+      }
+    }
+
     &-main {
       font-size: var(--h1-size);
       margin-left: 16%;
@@ -175,6 +225,19 @@ onMounted(() => {
       left: 10%;
       width: 60rem;
     }
+    & .smaller {
+      font-size: var(--h4-size);
+      & .lang-span-sub {
+        display: block;
+        text-align: center;
+        margin-left: -2rem;
+        font-size: var(--h6-size);
+      }
+    }
+    & .wider {
+      font-size: var(--h8-size);
+      margin-left: 20%;
+    }
     &-text-container {
       padding: 1rem 0;
       position: relative;
@@ -185,7 +248,10 @@ onMounted(() => {
       margin-left: 0;
       margin-top: -15rem;
       &-span {
-        margin-left: 30%;
+        margin-left: 20%;
+        &-polite {
+          font-size: var(--h9-size);
+        }
       }
     }
     &-sub-header {

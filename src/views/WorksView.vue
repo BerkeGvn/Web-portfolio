@@ -1,6 +1,6 @@
 <template>
   <section class="works">
-    <h2 class="works-header">My Works</h2>
+    <h2 class="works-header">{{ $t('works.header') }}</h2>
     <swiper
       :slidesPerView="1"
       :spaceBetween="30"
@@ -13,11 +13,12 @@
       :modules="modules"
       class="mySwiper"
     >
-      <swiper-slide v-for="project in Projects" :key="project.name">
+      <swiper-slide v-for="project in localizedProjects" :key="project.name">
         <ProjectDetails
           :name="project.name"
-          :desc="project.desc"
+          :desc="project.desc[locale]"
           :images="project.images"
+          :links="project.links"
         ></ProjectDetails>
       </swiper-slide>
     </swiper>
@@ -32,7 +33,11 @@ import { Pagination, Navigation } from 'swiper/modules'
 import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/pagination'
+import { useI18n } from 'vue-i18n'
+import { computed } from 'vue'
 const modules = [Pagination, Navigation]
+const { locale } = useI18n()
+const localizedProjects = computed(() => Projects)
 </script>
 
 <style lang="scss" scoped>

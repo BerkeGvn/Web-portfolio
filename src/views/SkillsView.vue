@@ -2,11 +2,9 @@
   <section class="skills">
     <div class="skills-container">
       <div class="skills-content">
-        <p class="skills-content-header">Frontend Expertise: Powering Digital Innovation</p>
+        <p class="skills-content-header">{{ $t('skills.header') }}</p>
         <p class="skills-content-text">
-          My frontend arsenal revolves around Vue.js as the cornerstone, augmented by TypeScript for
-          building resilient and scalable solutions. I specialize in breathing life into websites by
-          seamlessly integrating modern, animated elements.
+          {{ $t('skills.text') }}
         </p>
         <div class="skills-content-list-container">
           <ul class="skills-content-list skills-content-list-1">
@@ -156,9 +154,11 @@ onMounted(() => {
       color: var(--pink-1);
     }
     &-text {
-      color: var(--white-1);
+      color: var(--gray-2);
       font-size: var(--p2-size);
-      text-shadow: 0.2px 0.1px 3px var(--white-2);
+      background-color: var(--white-1);
+      padding: 1rem 2rem;
+      border-radius: 10px;
       font-weight: 500;
       width: 70%;
     }
@@ -266,6 +266,11 @@ onMounted(() => {
           margin: 1rem;
         }
       }
+    }
+  }
+  @media only screen and (max-width: 375px) {
+    img {
+      width: 15rem;
     }
   }
 }

@@ -11,9 +11,11 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@intlify/unplugin-vue-i18n": "^4.0.0",
     "gsap": "^3.12.5",
     "swiper": "^11.1.1",
-    "vue": "^3.4.15"
+    "vue": "^3.4.15",
+    "vue-i18n": "^9.13.1"
   },
   "devDependencies": {
     "@iconify-json/charm": "^1.1.12",
