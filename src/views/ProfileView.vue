@@ -1,7 +1,7 @@
 <template>
   <section class="profile">
     <div class="profile-photo-container">
-      <img class="animate" src="../../images/berke.webp" alt="my photo" />
+      <img class="animate" src="../../public/images/berke.webp" alt="my photo" />
     </div>
     <div class="profile-main">
       <p class="profile-main-header animate">

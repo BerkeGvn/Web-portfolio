@@ -2,7 +2,7 @@
   <section class="contact">
     <h2 class="contact-header">{{ $t('contact.header') }}</h2>
     <ContactDetails class="contact-details-container"></ContactDetails>
-    <img src="../../ellipse-background.svg" alt="" />
+    <img src="../../public/ellipse-background.svg" alt="" />
   </section>
 </template>
 

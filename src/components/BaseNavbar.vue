@@ -4,7 +4,7 @@
       <ul class="nav-first-links">
         <li class="nav-first-links-link">
           <a href="#">
-            <img src="../../favicon.svg" alt="" />
+            <img src="../../public/favicon.svg" alt="" />
           </a>
         </li>
         <li class="nav-first-links-link">
