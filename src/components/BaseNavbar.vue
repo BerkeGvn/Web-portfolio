@@ -26,7 +26,7 @@
             <MdiGithub></MdiGithub>
           </a>
         </li>
-        <li class="nav-second-links-link">{{ $t('nav.lang') }}</li>
+        <li><LanguageSwitcher></LanguageSwitcher></li>
       </ul>
     </div>
     <div class="nav-small">
@@ -38,16 +38,16 @@
       </div>
       <div class="nav-small-list">
         <ul class="nav-first-links">
-          <li class="nav-first-links-link">
+          <li class="nav-first-links-link" @click="toggleMenu">
             <a href="#profile">{{ $t('nav.about') }}</a>
           </li>
-          <li class="nav-first-links-link">
+          <li class="nav-first-links-link" @click="toggleMenu">
             <a href="#skills">{{ $t('nav.skills') }}</a>
           </li>
-          <li class="nav-first-links-link">
+          <li class="nav-first-links-link" @click="toggleMenu">
             <a href="#works">{{ $t('nav.works') }}</a>
           </li>
-          <li class="nav-first-links-link">
+          <li class="nav-first-links-link" @click="toggleMenu">
             <a href="#contact">{{ $t('nav.contact') }}</a>
           </li>
         </ul>
@@ -57,7 +57,7 @@
               <MdiGithub></MdiGithub>
             </a>
           </li>
-          <li class="nav-second-links-link">{{ $t('nav.lang') }}</li>
+          <li><LanguageSwitcher></LanguageSwitcher></li>
         </ul>
       </div>
     </div>
@@ -66,6 +66,7 @@
 
 <script setup>
 import MdiGithub from '~icons/mdi/github'
+import LanguageSwitcher from './LanguageSwitcher.vue'
 
 import { ref } from 'vue'
 

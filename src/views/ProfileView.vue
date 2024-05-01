@@ -1,20 +1,14 @@
 <template>
   <section class="profile">
     <div class="profile-photo-container">
-      <img class="animate" src="../../images/my-photo.jpg" alt="my photo" />
+      <img class="animate" src="../../images/berke.webp" alt="my photo" />
     </div>
     <div class="profile-main">
       <p class="profile-main-header animate">
-        Crafting Digital Experiences and Fostering Creativity
+        {{ $t('profile.header') }}
       </p>
       <p class="profile-main-text animate">
-        Hey there, I'm Berke, a frontend developer and designer based in Tokyo. Fluent in Turkish,
-        English, and Japanese, I thrive on creating digital experiences that resonate across
-        cultures. While my formal work experience may still be evolving, I've immersed myself in the
-        dynamic world of web development, constantly refining my skills and pushing boundaries over
-        the past three years. From sleek designs to seamless functionality, I'm passionate about
-        crafting websites that not only appeal to the eye but also provide an intuitive user
-        experience. Contact me if you want to collaborate and bring your digital vision to life!
+        {{ $t('profile.text') }}
       </p>
     </div>
   </section>
@@ -53,6 +47,7 @@ onMounted(() => {
   height: 100vh;
   display: flex;
   align-items: center;
+  padding-right: 2rem;
   &-photo-container {
     width: 50%;
     height: 70%;
@@ -65,9 +60,8 @@ onMounted(() => {
   }
   &-main {
     color: var(--white-1);
-    padding: 0 2rem;
 
-    width: 70%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     gap: 4rem;
@@ -141,7 +135,7 @@ onMounted(() => {
       margin-right: 0;
     }
     &-main {
-      width: 100%;
+      width: 90%;
       margin-top: 2rem;
       &-header {
         font-size: var(--h7-size);
@@ -152,6 +146,14 @@ onMounted(() => {
         width: 100%;
       }
     }
+  }
+  @media only screen and (max-width: 375px) {
+    &-photo-container {
+      width: 40%;
+      height: auto;
+      margin-right: 0;
+    }
+    margin-bottom: 6rem;
   }
 }
 </style>

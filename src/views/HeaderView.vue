@@ -7,7 +7,10 @@
           <span class="lang-span-sub"> {{ $t('header.mainSub') }}</span></span
         >
 
-        <span class="header-main-span">{{ $t('header.span') }}</span>
+        <span class="header-main-span"
+          >{{ $t('header.span') }}
+          <span v-if="locale === 'ja'" class="header-main-span-polite">です。</span>
+        </span>
       </h1>
       <h2 class="header-sub-header">{{ $t('header.sub') }}</h2>
       <img class="blob" src="../../background-square.svg" alt="a background blob" />
@@ -18,20 +21,26 @@
 <script setup>
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { onMounted } from 'vue'
+import { onMounted, watchEffect } from 'vue'
 import { useI18n } from 'vue-i18n'
 gsap.registerPlugin(ScrollTrigger)
 const { locale } = useI18n()
 
-onMounted(() => {
-  //Change the font size according to language
-  if (locale.value === 'ja') {
-    const header = document.querySelector('.lang-span')
-    const subHeader = document.querySelector('.header-sub-header')
+watchEffect(() => {
+  //Change the font size, styler according to languageS
+  const header = document.querySelector('.lang-span')
+  const subHeader = document.querySelector('.header-sub-header')
+  if (locale.value === 'ja' && header && subHeader) {
     header.classList.add('smaller')
     subHeader.classList.add('wider')
   }
+  if (header && subHeader && locale.value === 'en') {
+    header.classList.remove('smaller')
+    subHeader.classList.remove('wider')
+  }
+})
 
+onMounted(() => {
   gsap.fromTo(
     '.blob',
     {
@@ -88,6 +97,11 @@ onMounted(() => {
       color: var(--blue-1);
       display: block;
       margin-left: 18%;
+      // for japanese desu suffix
+      &-polite {
+        color: var(--gray-2);
+        font-size: var(--h7-size);
+      }
     }
   }
   &-sub-header {
@@ -222,7 +236,7 @@ onMounted(() => {
     }
     & .wider {
       font-size: var(--h8-size);
-      margin-left: 30%;
+      margin-left: 20%;
     }
     &-text-container {
       padding: 1rem 0;
@@ -234,7 +248,10 @@ onMounted(() => {
       margin-left: 0;
       margin-top: -15rem;
       &-span {
-        margin-left: 30%;
+        margin-left: 20%;
+        &-polite {
+          font-size: var(--h9-size);
+        }
       }
     }
     &-sub-header {
