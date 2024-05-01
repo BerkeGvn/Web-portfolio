@@ -24,12 +24,12 @@
         </div>
       </div>
       <div class="skills-asset">
-        <img class="stack-icons stack-icons-figma" src="../../figma.svg" alt="" />
-        <img class="stack-icons stack-icons-vue" src="../../vue.svg" alt="" />
-        <img class="stack-icons stack-icons-ts" src="../../typescript.svg" alt="" />
-        <img class="stack-icons stack-icons-sass" src="../../sass.svg" alt="" />
-        <img class="stack-icons stack-icons-react" src="../../react.svg" alt="" />
-        <img src="../../berke.svg" alt="" />
+        <img class="stack-icons stack-icons-figma" src="../../public/figma.svg" alt="" />
+        <img class="stack-icons stack-icons-vue" src="../../public/vue.svg" alt="" />
+        <img class="stack-icons stack-icons-ts" src="../../public/typescript.svg" alt="" />
+        <img class="stack-icons stack-icons-sass" src="../../public/sass.svg" alt="" />
+        <img class="stack-icons stack-icons-react" src="../../public/react.svg" alt="" />
+        <img src="../../public/berke.svg" alt="" />
       </div>
     </div>
   </section>

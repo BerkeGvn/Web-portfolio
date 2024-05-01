@@ -13,7 +13,7 @@
         </span>
       </h1>
       <h2 class="header-sub-header">{{ $t('header.sub') }}</h2>
-      <img class="blob" src="../../background-square.svg" alt="a background blob" />
+      <img class="blob" src="../../public/background-square.svg" alt="a background blob" />
     </div>
   </header>
 </template>
