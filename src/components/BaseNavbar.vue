@@ -197,7 +197,7 @@ const toggleMenu = () => {
   .nav-button span {
     display: block;
     position: absolute;
-    height: 6px;
+    height: 4px;
     width: 100%;
     background: var(--gray-1);
     border-radius: 9px;
@@ -218,11 +218,11 @@ const toggleMenu = () => {
 
   .nav-button span:nth-child(2),
   .nav-button span:nth-child(3) {
-    top: 14px; /* Adjust the gap size here */
+    top: 10px; /* Adjust the gap size here */
   }
 
   .nav-button span:nth-child(4) {
-    top: 29px;
+    top: 20px;
   }
 
   .nav-button.open span:nth-child(1) {
@@ -249,6 +249,12 @@ const toggleMenu = () => {
     top: 14px;
     width: 0%;
     left: 50%;
+  }
+  @media only screen and (max-width: 375px) {
+    .nav-button {
+      width: 3rem;
+      margin: 1rem 1rem;
+    }
   }
 }
 </style>

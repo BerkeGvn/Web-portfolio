@@ -233,6 +233,7 @@ onMounted(() => {
     }
   }
   @media only screen and (max-width: 500px) {
+    margin-top: 4rem;
     padding: 2rem;
     & .stack-icons {
       position: absolute;
@@ -254,7 +255,7 @@ onMounted(() => {
       }
       &-text {
         font-size: var(--p3-size);
-        width: 70%;
+        width: 90%;
       }
 
       &-list {
@@ -271,6 +272,18 @@ onMounted(() => {
   @media only screen and (max-width: 375px) {
     img {
       width: 15rem;
+    }
+    &-content {
+      &-header {
+        font-size: var(--h8-size);
+      }
+      &-text {
+        font-size: var(--p4-size);
+      }
+
+      &-list {
+        font-size: var(--p5-size);
+      }
     }
   }
 }

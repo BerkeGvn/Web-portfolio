@@ -260,5 +260,35 @@ onMounted(() => {
       margin-left: 10%;
     }
   }
+  @media only screen and (max-width: 375px) {
+    &-main {
+      font-size: 6rem;
+      margin-top: -10rem;
+      &-span {
+        margin-left: 14%;
+        &-polite {
+          font-size: 2rem;
+        }
+      }
+    }
+    &-sub-header {
+      font-size: var(--h9-size);
+      width: 90%;
+      margin-left: 15%;
+      margin-top: 2rem;
+    }
+    & .smaller {
+      font-size: var(--h4-size);
+      & .lang-span-sub {
+        margin-left: -15rem;
+        font-size: var(--h8-size);
+      }
+    }
+    & .wider {
+      font-size: var(--h9-size);
+      margin-left: 20%;
+      width: 100%;
+    }
+  }
 }
 </style>
