@@ -137,6 +137,7 @@ onMounted(() => {
     &-main {
       width: 90%;
       margin-top: 2rem;
+      gap: 2rem;
       &-header {
         font-size: var(--h7-size);
         width: 100%;
@@ -152,6 +153,17 @@ onMounted(() => {
       width: 40%;
       height: auto;
       margin-right: 0;
+    }
+    &-main {
+      margin-bottom: 4rem;
+      &-header {
+        font-size: var(--h8-size);
+        width: 100%;
+      }
+      &-text {
+        font-size: var(--p3-size);
+        width: 100%;
+      }
     }
     margin-bottom: 6rem;
   }
