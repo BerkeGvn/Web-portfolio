@@ -23,10 +23,12 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { onMounted, watchEffect } from 'vue'
 import { useI18n } from 'vue-i18n'
+
 gsap.registerPlugin(ScrollTrigger)
 const { locale } = useI18n()
 
 watchEffect(() => {
+  console.log(locale.value)
   //Change the font size, styler according to languageS
   const header = document.querySelector('.lang-span')
   const subHeader = document.querySelector('.header-sub-header')
@@ -34,6 +36,7 @@ watchEffect(() => {
     header.classList.add('smaller')
     subHeader.classList.add('wider')
   }
+
   if (header && subHeader && locale.value === 'en') {
     header.classList.remove('smaller')
     subHeader.classList.remove('wider')
@@ -41,6 +44,13 @@ watchEffect(() => {
 })
 
 onMounted(() => {
+  //Change the font size, styler if website lang is entered from url
+  const header = document.querySelector('.lang-span')
+  const subHeader = document.querySelector('.header-sub-header')
+  if (locale.value === 'ja' && header && subHeader) {
+    header.classList.add('smaller')
+    subHeader.classList.add('wider')
+  }
   gsap.fromTo(
     '.blob',
     {
