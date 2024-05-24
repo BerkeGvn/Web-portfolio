@@ -15,7 +15,8 @@
     "gsap": "^3.12.5",
     "swiper": "^11.1.1",
     "vue": "^3.4.15",
-    "vue-i18n": "^9.13.1"
+    "vue-i18n": "^9.13.1",
+    "vue-router": "^4.3.2"
   },
   "devDependencies": {
     "@iconify-json/charm": "^1.1.12",
