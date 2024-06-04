@@ -13,6 +13,24 @@ const Projects = [{
   links: [
     'https://github.com/BerkeGvn/Ojala',
     'https://ojala.vercel.app/',
+    'https://www.figma.com/design/LIXlzw3cARNDYP6gxZvvsw/OJALA?node-id=21-489&t=IMktNEP6ItZe2FIy-1'
+  ]
+},
+{
+  name: 'Bishokudō',
+  desc: {
+    en: `This is a landing page for Bishokudō, a fictional diet planning service that offers personalized meal plans to promote health and beauty. It was built using Nuxt 3 and styled with Tailwind CSS, featuring a clean and modern design to showcase services, plans, success stories, and contact information.`,
+    ja: 'これは、美食道という架空のダイエットプランニングサービスのためのランディングページです。健康と美を促進するパーソナライズされた食事プランを提供します。Nuxt 3を使用して構築し、Tailwind CSSでスタイリングしました。クリーンでモダンなデザインで、サービス、プラン、成功事例、お問い合わせ情報を紹介します。'
+  },
+  images: [
+    './images/bishokudo.png',
+    './images/bishokudo-s-1.png',
+    './images/bishokudo-s-2.png'
+  ],
+  links: [
+    'https://github.com/BerkeGvn/Bishokudo',
+    'https://bishokudo.vercel.app/',
+    'https://www.figma.com/design/Wm3dAcdDbRDRnLL8T045HT/Bishokud%C5%8D?node-id=3-2&t=xGcjvqUpZa0v3xkk-1'
   ]
 },
 {
@@ -32,6 +50,7 @@ const Projects = [{
   links: [
     'https://github.com/BerkeGvn/suiko-task-app',
     'https://berkegvn.github.io/suiko-task-app/Guide',
+    'https://www.figma.com/design/4f2c0LZuKRXsXb5MLYJHAE/Suiko-Task-App?node-id=0-1&t=hRONTwFDahyYFRE8-1'
   ]
 },
 {
@@ -51,6 +70,7 @@ const Projects = [{
   links: [
     'https://github.com/BerkeGvn/Roka-Wine',
     'https://berkegvn.github.io/Roka-Wine/',
+    'https://www.figma.com/design/wRXCOLfsC8CmNGpeX6Y6VA/Roka-Ecom-v1?node-id=222-3&t=ZpEKTPT34P3Pp6fN-1'
   ]
 },
 {

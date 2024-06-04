@@ -18,11 +18,17 @@
       </p>
       <div class="projects-details-links">
         <a :href="props.links[0]" target="_blink">
-          <MdiGithub class="projects-details-links-icon"></MdiGithub
-        ></a>
+          <MdiGithub class="projects-details-links-icon"></MdiGithub>
+          <span class="link-desc">Code</span>
+        </a>
         <a :href="props.links[1]" target="_blink">
-          <MdiLinkVariant class="projects-details-links-icon"></MdiLinkVariant
-        ></a>
+          <MdiLinkVariant class="projects-details-links-icon"></MdiLinkVariant>
+          <span class="link-desc">Demo</span>
+        </a>
+        <a v-if="props.links[2]" :href="props.links[2]" target="_blink">
+          <DeviconFigma class="projects-details-links-icon"></DeviconFigma>
+          <span class="link-desc">Design</span>
+        </a>
       </div>
     </div>
   </div>
@@ -31,6 +37,7 @@
 <script setup>
 import MdiGithub from '~icons/mdi/github'
 import MdiLinkVariant from '~icons/mdi/link-variant'
+import DeviconFigma from '~icons/devicon/figma'
 
 const props = defineProps({
   name: String,
@@ -83,17 +90,33 @@ const props = defineProps({
     }
     &-links {
       align-self: flex-end;
+      display: flex;
+      gap: 4rem;
       & a {
         font-size: 4rem;
         transition: all 0.5s;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        & .link-desc {
+          font-size: 2rem;
+        }
         &:hover {
           color: var(--blue-1);
         }
-        &:last-child {
-          margin-left: 2rem;
-
+        &:nth-child(2) {
           &:hover {
             color: var(--yellow-1);
+          }
+        }
+        &:last-child {
+          -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+          filter: grayscale(100%);
+          &:hover {
+            -webkit-filter: grayscale(0); /* Safari 6.0 - 9.0 */
+            filter: grayscale(0);
           }
         }
       }
