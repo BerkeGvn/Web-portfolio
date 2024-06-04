@@ -100,6 +100,7 @@ const props = defineProps({
         text-align: center;
         justify-content: center;
         align-items: center;
+        color: var(--gray-2);
         & .link-desc {
           font-size: 2rem;
         }
