@@ -188,9 +188,6 @@ const props = defineProps({
         align-self: center;
         & a {
           font-size: 3.5rem;
-          &:last-child {
-            margin-left: 2rem;
-          }
         }
       }
     }
@@ -224,9 +221,6 @@ const props = defineProps({
         align-self: center;
         & a {
           font-size: 3.5rem;
-          &:last-child {
-            margin-left: 2rem;
-          }
         }
       }
     }
